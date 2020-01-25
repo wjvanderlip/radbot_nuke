@@ -1,0 +1,29 @@
+<launch>
+
+  <remap from="para" to="fox1"/>
+
+  <node name="fox1" pkg="radbot_nuke" type="printer.py" output="screen">
+    <param name="my_SN" type="str" value="eRC1" />
+    <param name="my_det" type="str" value="Det1"/>
+  </node>
+
+  <remap from="para" to="fox2"/>
+
+  <node name="fox2" pkg="radbot_nuke" type="printer.py" output="screen">
+    <param name="my_SN" type="str" value="eRC2" />
+    <param name="my_det" type="str" value="Det2"/>
+  </node>
+
+<remap from="para" to="fox3"/>
+
+  <node name="fox3" pkg="radbot_nuke" type="printer.py" output="screen">
+    <param name="my_SN" type="str" value="eRC3" />
+    <param name="my_det" type="str" value="Det3"/>
+
+  </node>
+
+
+    <!-- <rosparam command="load" file="$(find bpiem_ros)/launch/lm_params.yaml"/> -->
+    <!-- <rosparam command='load' parameter_name='sn' value="eRC1234"/> -->
+  <!-- </node> -->
+</launch>
