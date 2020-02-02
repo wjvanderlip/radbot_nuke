@@ -1,0 +1,9 @@
+std_msgs/Header       header
+uint8                detid
+std_msgs/String      det_sn
+float64               ts_sys
+uint16[]              channel
+uint32[]              ts_det
+float64               event_rate
+float64               trig_rate
+float64               true_rate

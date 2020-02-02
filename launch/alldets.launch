@@ -1,26 +1,26 @@
 <launch>
 
-  <remap from="para" to="fox1"/>
+  <remap from="para" to="Det1"/>
 
-  <node name="fox1" pkg="radbot_nuke" type="printer.py" output="screen">
-    <param name="my_SN" type="str" value="eRC1" />
-    <param name="my_det" type="str" value="Det1"/>
+  <node name="Det1" pkg="radbot_nuke" type="emorpho_acq.py" output="screen">
+    <param name="my_SN" type="str" value="eRC4129" />
+    <param name="my_det" type="str" value="1"/>
   </node>
 
-  <remap from="para" to="fox2"/>
+  <!-- <remap from="para" to="Det2"/>
 
-  <node name="fox2" pkg="radbot_nuke" type="printer.py" output="screen">
-    <param name="my_SN" type="str" value="eRC2" />
-    <param name="my_det" type="str" value="Det2"/>
+  <node name="Det2" pkg="radbot_nuke" type="emorpho_acq.py" output="screen">
+    <param name="my_SN" type="str" value="eRC4130" />
+    <param name="my_det" type="str" value="2"/>
   </node>
 
-<remap from="para" to="fox3"/>
+<remap from="para" to="Det3"/>
 
-  <node name="fox3" pkg="radbot_nuke" type="printer.py" output="screen">
-    <param name="my_SN" type="str" value="eRC3" />
-    <param name="my_det" type="str" value="Det3"/>
+  <node name="Det3" pkg="radbot_nuke" type="emorpho_acq.py" output="screen">
+    <param name="my_SN" type="str" value="eRC4131" />
+    <param name="my_det" type="str" value="3"/>
 
-  </node>
+  </node> -->
 
 
     <!-- <rosparam command="load" file="$(find bpiem_ros)/launch/lm_params.yaml"/> -->
