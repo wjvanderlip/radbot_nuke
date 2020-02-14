@@ -1,7 +1,7 @@
 import socket
 import numpy as np
 import pickle
-import time 
+import time
 
 
 class client(object):
@@ -30,7 +30,7 @@ class client(object):
             msg = self.build_message(sn, ts, adc)+self.eom
             self.client.send(msg)
 #             from_server = self.client.recv(4096)
-            print "message sent in ", time.time()-t_start
+            # print "message sent in ", time.time()-t_start
 
         except socket.error, exc:
             print "Caught exception socket.error : %s" % exc

@@ -4,6 +4,9 @@ import rospy
 import numpy as np
 import pickle
 import time
+import socket
+from rospy.numpy_msg import numpy_msg
+from radbot_nuke.msg import detector_msg
 
 
 rospy.init_node('detServer', anonymous=False)
@@ -74,7 +77,7 @@ def start_server(port):
                     buf = None
                     conn.close()
                     break
-            print 'client disconnected'
+            # print 'client disconnected'
 
     except socket.error, exc:
         print "Caught exception socket.error : %s" % exc

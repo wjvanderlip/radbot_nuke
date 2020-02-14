@@ -4,12 +4,9 @@ import rospy
 import bpiem
 
 import numpy as np
-import os
-import rospkg
-# rospack = rospkg.RosPack()
-from rospy.numpy_msg import numpy_msg
 
-from radbot_nuke.msg import detector_msg
+# import rospkg
+# rospack = rospkg.RosPack()
 
 from multiprocessing import Pool
 
