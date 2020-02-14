@@ -162,6 +162,7 @@ include_directories(
 ## in contrast to setup.py, you can choose the destination
 install(PROGRAMS
   scripts/emorpho_acq.py
+  scripts/emorpho_daq.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 

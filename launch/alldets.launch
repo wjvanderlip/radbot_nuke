@@ -1,29 +1,6 @@
 <launch>
 
-  <remap from="para" to="Det1"/>
+  <node name="detServer" pkg="radbot_nuke" type="server2ros.py" output="screen"> </node>
+  <node name="RadAcqusitionClient" pkg="radbot_nuke" type="emorpho_daq.py" output="screen"> </node>
 
-  <node name="Det1" pkg="radbot_nuke" type="emorpho_acq.py" output="screen">
-    <param name="my_SN" type="str" value="eRC4129" />
-    <param name="my_det" type="str" value="1"/>
-  </node>
-
-  <!-- <remap from="para" to="Det2"/>
-
-  <node name="Det2" pkg="radbot_nuke" type="emorpho_acq.py" output="screen">
-    <param name="my_SN" type="str" value="eRC4130" />
-    <param name="my_det" type="str" value="2"/>
-  </node>
-
-<remap from="para" to="Det3"/>
-
-  <node name="Det3" pkg="radbot_nuke" type="emorpho_acq.py" output="screen">
-    <param name="my_SN" type="str" value="eRC4131" />
-    <param name="my_det" type="str" value="3"/>
-
-  </node> -->
-
-
-    <!-- <rosparam command="load" file="$(find bpiem_ros)/launch/lm_params.yaml"/> -->
-    <!-- <rosparam command='load' parameter_name='sn' value="eRC1234"/> -->
-  <!-- </node> -->
 </launch>
