@@ -14,7 +14,7 @@ pub = rospy.Publisher('/detector_data', detector_msg, queue_size=10)
 
 def send_ros_msg(ts, adc, det_sn):
     '''
-    takes output from multi_process, packages it and publishes as message
+    takes output from client, packages it, and publishes as message
     '''
     msg = detector_msg()
     now = time.time()
@@ -29,6 +29,13 @@ def send_ros_msg(ts, adc, det_sn):
     print len(ts), len(adc), det_sn, " Published!!"
 
 def process_rates(rates):
+    '''
+    If we start to hit the list mode buffer throughput, this parses
+    the "rate data" flag returned with each eMorpho buffer readout. Using the
+    live and dead time values you can assess higher count rate envs
+
+    https://www.bridgeportinstruments.com/products/mds/mds_doc/read_rates.php
+    '''
     # old_acq_tme = 0
     # old_ded_tme = 0
     # old_dt = 0
@@ -53,6 +60,13 @@ def process_rates(rates):
 
 
 def start_server(port):
+    '''
+    Starts a server to constantly monior on some port for incoming data from one of the
+    multiprocessing subprocesses. The clinet will send a pickeled list consiting of the detectors
+    serial number, an array of event time stamps and an array of event ACD (channel) values
+
+    This data is then published on the /detector_data topic using the detector_msg message
+    '''
     try:
         serv = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         serv.bind(('0.0.0.0', port))

@@ -3,3 +3,7 @@
 *.bag
 
 !/scripts/Analysis/*
+
+**/*.bag
+
+scripts/Analysis/*

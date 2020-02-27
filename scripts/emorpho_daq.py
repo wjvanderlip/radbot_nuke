@@ -2,15 +2,10 @@
 
 import rospy
 import bpiem
-
 import numpy as np
-
-# import rospkg
-# rospack = rospkg.RosPack()
-
 from multiprocessing import Pool
 
-from client import client
+from client import client #client.py
 
 # init the node
 rospy.init_node('RadAcqusitionClient', anonymous=False)
@@ -30,7 +25,7 @@ c = client(port_num = 8082)
 def multi_process(SNs):
     '''
     parallel element of code sent to multiprocess
-    starts multiple instances of client
+    starts a subprocess for each detector SN connected, and publishes on a client
     '''
     for ts, adc, psd, in detector.listmode(max_gap=1, duration=9.E6, mode=lm_mode, input_sn=SNs):
         if len(ts) == 0:  #if the acq is bad from  the bpi package, skips ROS integration
