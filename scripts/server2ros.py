@@ -21,12 +21,18 @@ def send_ros_msg(ts, adc, det_sn):
     rnow = rospy.Time.now()
     msg.header.stamp = rnow
     msg.det_sn.data = det_sn
+    msg.detid = assign_det_num(det_sn)
     msg.ts_sys = now
     msg.ts_det = ts
     msg.channel = adc
+    msg.event_rate = len(adc)*1.0
     #process rate data if needed
     pub.publish(msg)
     print len(ts), len(adc), det_sn, " Published!!"
+
+def assign_det_num(ser_no):
+    assignments = {'eRC4129':1, 'eRC4216':3, 'eRC4131':2, 'eRC4214':5, 'eRC4130':4}
+    return assignments[ser_no]
 
 def process_rates(rates):
     '''
