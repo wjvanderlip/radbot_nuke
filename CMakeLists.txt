@@ -52,6 +52,8 @@ find_package(catkin REQUIRED COMPONENTS
  add_message_files(
    FILES
    detector_msg.msg
+   array_msg.msg
+   rad_rate_msg.msg
 )
 
 ## Generate services in the 'srv' folder
@@ -163,6 +165,7 @@ include_directories(
 install(PROGRAMS
   scripts/emorpho_acq.py
   scripts/emorpho_daq.py
+  scripts/processRadData.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 

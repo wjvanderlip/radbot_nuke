@@ -2,5 +2,6 @@
 
   <node name="detServer" pkg="radbot_nuke" type="server2ros.py" output="screen"> </node>
   <node name="RadAcqusitionClient" pkg="radbot_nuke" type="emorpho_daq.py" output="screen"> </node>
+  <node name="combineDets" pkg="radbot_nuke" type="processRadData.py" output=None> </node>
 
 </launch>
