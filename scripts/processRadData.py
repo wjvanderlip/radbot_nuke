@@ -65,7 +65,7 @@ class combineArray(object):
             self.ts_sync.append(self.current_measurement_time-self.start_times[detID])
         self.inter_sum = 0
 
-        if self.pub_time + 1 <= time.time():
+        if self.pub_time + .1 <= time.time():
             m = array_msg()
             m.idlist = self.detid
             m.snlist = self.detsn
