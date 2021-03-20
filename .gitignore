@@ -4,6 +4,10 @@
 
 !/scripts/Analysis/*
 
+!scripts/Analysis/stitch_data.py
+!scripts/Analysis/VectorWork.ipynb
+!scripts/Analysis/CadetMapper.py
+
 **/*.bag
 
 scripts/Analysis/*
